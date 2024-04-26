@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easyso Google</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #search-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+            width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+        #search-input {
+            width: 80%;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+            margin-bottom: 20px;
+        }
+        #search-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        #search-button:hover {
+            background-color: #e6e6e6;
+        }
+        #feeling-lucky {
+            border: none;
+            background: none;
+            color: #70757a;
+            text-decoration: underline;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        #feeling-lucky:hover {
+            color: #4b4f56;
+        }
+    </style>
+</head>
+<body>
+    <div id="search-container">
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" width="272" height="92">
+        <br><br>
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Google'da Ara">
+            <button type="submit" id="search-button">Easyso Google'da Ara</button>
+        </form>
+        <a href="#" id="feeling-lucky">Easyso Kendimi Şanslı Hissediyorum</a>
+    </div>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var searchTerm = document.getElementById('search-input').value;
+            // Google'da arama yap
+            window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(searchTerm);
+        });
+
+        document.getElementById('feeling-lucky').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Rastgele bir sonuç için Google'da arama yap
+            window.location.href = "https://www.google.com/search?q=" + encodeURIComponent('Easyso');
+        });
+    </script>
+</body>
+</html>
